@@ -7,7 +7,7 @@ import {
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-import movieBrowserReducer from './modules/movie-browser/movie-browser.reducer.js'
+import movieBrowserReducer from './modules/movie-browser/movie-browser.reducers';
 
 const rootReducer = combineReducers({
   movieBrowser: movieBrowserReducer

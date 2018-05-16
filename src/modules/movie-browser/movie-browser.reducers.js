@@ -6,7 +6,7 @@ const movieModalReducer = createReducer({isOpen: false}, {
 });
 
 const movieBrowserReducer = combineReducers({
-  movieModal: movieModalReducer;
+  movieModal: movieModalReducer
 });
 
 export default movieBrowserReducer;
