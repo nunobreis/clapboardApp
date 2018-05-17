@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { RefreshIndicator } from 'material-ui';
 
-const styles {
+const styles = {
   refreshStyle: {
     position: 'realtive',
     display: 'block',

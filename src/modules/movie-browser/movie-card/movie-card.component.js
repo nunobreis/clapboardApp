@@ -12,7 +12,7 @@ const styles = {
     overflow: 'hidden'
   },
   card: {
-    cursor: pointer,
+    cursor: 'pointer',
     height: 400,
     overflow: 'hidden'
   },
