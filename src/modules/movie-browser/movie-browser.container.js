@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { AppBar } from 'material-ui';
+import { AppBar, TextField, RaisedButton } from 'material-ui';
 
 import * as movieActions from './movie-browser.actions';
 import * as movieHelpers from './movie-browser.helpers';
 import * as scrollHelpers from '../common/scroll.helpers';
 import MovieList from './movie-list/movie-list.component';
+import MovieModal from './movie-modal/movie-modal.container';
 
 class MovieBrowser extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class MovieBrowser extends React.Component {
             />
           </Row>
         </Grid>
+        <MovieModal />
       </div>
     );
   }

@@ -1,12 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Card, CardTitle, CardMedia } from 'material-ui';
+import { openMovieModal } from '../movie-modal/movie-modal.actions';
 
 const styles = {
-  cardTitle: {
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden'
-  },
   cardMedia: {
     maxHeight: 394,
     overflow: 'hidden'
@@ -31,15 +28,16 @@ class MovieCardComponent extends React.Component {
   }
 
   render() {
-    const {movie, openMediaModal} = this.props;
+    const {movie, openMovieModal} = this.props;
 
     const subtitle = this.state.isMouseOver ? movie.overview : null;
 
     return (
       <Card
-        style={styles.cardMedia}
+        style={styles.card}
         onMouseOver={() => this.setState({ isMouseOver: true })}
         onMouseLeave={() => this.setState({ isMouseOver: false })}
+        onClick={() => openMovieModal(movie.id)}
       >
         <CardMedia
           style={styles.cardMedia}
@@ -60,4 +58,7 @@ class MovieCardComponent extends React.Component {
   }
 }
 
-export default MovieCardComponent;
+export default connect(
+  () => ({}),
+  { openMovieModal }
+)(MovieCardComponent);

@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux';
-import { createReducer, createAsyncReducer } from '../common/redux.helpers.js';
+import { createReducer, createAsyncReducer } from '../common/redux.helpers';
 import { keys as movieActionKeys } from './movie-browser.actions';
-
-const movieModalReducer = createReducer({isOpen: false}, {
-
-});
+import movieModalReducer from './movie-modal/movie-modal.reducer';
 
 const moviesSuccessReducer = (state, action) => {
   const existingMovies = state.response ? state.response.results : [];
@@ -27,9 +24,9 @@ const movieBrowserReducer = combineReducers({
     [`${movieActionKeys.GET_TOP_MOVIES}_SUCCESS`]: moviesSuccessReducer
   }),
   movieSearch: createAsyncReducer(movieActionKeys.SEARCH_MOVIES, {
-    [`${movieActionKeys.SEARCH_MOVIES}_SUCCESS`] : moviesSuccessReducer
+    [`${movieActionKeys.SEARCH_MOVIES}_SUCCESS`]: moviesSuccessReducer
   }),
-  movieDetails: createAsyncReducer(movieActionKeys.GET_MOVIE_DETAILS)
+  movieDetails: createAsyncReducer(movieActionKeys.GET_MOVIE_DETAILS),
 });
 
 export default movieBrowserReducer;
