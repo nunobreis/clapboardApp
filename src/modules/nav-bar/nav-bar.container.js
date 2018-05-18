@@ -13,7 +13,10 @@ class MovieNavbar extends React.Component {
       <nav
         className="navbar navbar-dark bg-dark fixed-top justify-content-between"
       >
-        <a className="navbar-brand text-light">
+        <a
+          className="navbar-brand text-light"
+          href="/"
+        >
           <img src="img/clapperboard.png"
           width="20"
           height="20"
@@ -34,11 +37,12 @@ class MovieNavbar extends React.Component {
             type="submit">
             Search
           </button>
-          <button
+          <a
             className="btn btn-warning my-2 my-sm-0 mx-2"
-            type="submit">
+            href="/statistics"
+          >
             Statistics
-          </button>
+          </a>
         </form>
       </nav>
     );
