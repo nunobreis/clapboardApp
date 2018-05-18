@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { AppBar, TextField, RaisedButton } from 'material-ui';
 
 import * as movieActions from './movie-browser.actions';
 import * as movieHelpers from './movie-browser.helpers';
@@ -44,17 +43,15 @@ class MovieBrowser extends React.Component {
     const { topMovies } = this.props;
     const movies = movieHelpers.getMoviesList(topMovies.response);
     return(
-      <div>
-        <AppBar title='Movie Browser' />
+      <div className="my-5">
         <Grid>
           <Row>
-            <p>Search will go here</p>
-          </Row>
-          <Row>
-            <MovieList
-              movies={movies}
-              isLoading={topMovies.isLoading}
-            />
+            <div className="my-5">
+              <MovieList
+                movies={movies}
+                isLoading={topMovies.isLoading}
+              />
+            </div>
           </Row>
         </Grid>
         <MovieModal />
