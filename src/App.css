@@ -5,3 +5,7 @@ body {
 .navbar {
   opacity: .9;
 }
+
+.nabar-brand > img {
+  margin-top: -5px;
+}

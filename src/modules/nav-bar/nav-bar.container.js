@@ -14,7 +14,13 @@ class MovieNavbar extends React.Component {
         className="navbar navbar-dark bg-dark fixed-top justify-content-between"
       >
         <a className="navbar-brand text-light">
-          BlackScreen App
+          <img src="img/clapperboard.png"
+          width="20"
+          height="20"
+          />
+          <span className="mx-3">
+            Clapperboard App
+          </span>
         </a>
         <form className="form-inline">
           <input
@@ -27,6 +33,11 @@ class MovieNavbar extends React.Component {
             className="btn btn-outline-success my-2 my-sm-0"
             type="submit">
             Search
+          </button>
+          <button
+            className="btn btn-warning my-2 my-sm-0 mx-2"
+            type="submit">
+            Statistics
           </button>
         </form>
       </nav>
