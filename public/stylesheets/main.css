@@ -1,0 +1,11 @@
+body {
+  background: #f9f9f9 url("/img/doodles.png") repeat; }
+
+.navbar {
+  opacity: .9; }
+
+.nabar-brand > img {
+  margin-top: -5px; }
+
+#statistics-section {
+  margin-top: 100px; }
