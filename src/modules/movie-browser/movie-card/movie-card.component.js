@@ -34,6 +34,7 @@ class MovieCardComponent extends React.Component {
 
     return (
       <Card
+        className="movie-card"
         style={styles.card}
         onMouseOver={() => this.setState({ isMouseOver: true })}
         onMouseLeave={() => this.setState({ isMouseOver: false })}

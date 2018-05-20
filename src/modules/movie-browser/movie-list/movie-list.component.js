@@ -16,8 +16,8 @@ const MovieListComponent = ({ movies, isLoading }) => {
       style={styles.movieColumn}
       key={movie.id}
       xs={12}
-      sm={4}
-      md={3}
+      sm={12}
+      md={4}
       lg={3}
     >
       <MovieCard movie={movie} />

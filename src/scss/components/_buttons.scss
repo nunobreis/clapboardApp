@@ -1,0 +1,29 @@
+@import "components/colors.scss";
+
+@mixin search-button {
+  border-radius: .25rem;
+  border: 1px solid $primary-color;
+  background-color: transparent;
+  color: $primary-color;
+}
+
+@mixin search-button-hover {
+  border-radius: .25rem;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: $white;
+}
+
+@mixin statistics-button {
+  border-radius: .25rem;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: $white;
+}
+
+@mixin statistics-button-hover {
+  border-radius: .25rem;
+  border: 1px solid $primary-color-shade;
+  background-color: $primary-color-shade;
+  color: $white;
+}
