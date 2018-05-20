@@ -1,0 +1,52 @@
+@import "components/colors.scss";
+@import "components/buttons.scss";
+
+body {
+    background: $background-color url("/img/doodles.png") repeat;
+
+    .navbar {
+      background-color: $secondary-color;
+      opacity: .9;
+
+      #logo {
+        margin-top: -10px;
+      }
+
+      .button-search {
+        @include search-button;
+      }
+
+      .button-search:hover {
+        @include search-button-hover;
+      }
+
+      .button-statistics {
+        @include statistics-button;
+      }
+
+      .button-statistics:hover {
+        @include statistics-button-hover;
+      }
+    }
+
+    #search-section {
+      margin-top: 100px;
+    }
+
+    #statistics-section {
+      margin-top: 100px;
+    }
+
+    .movie-card {
+      margin-top: 10px;
+    }
+}
+
+// Responsive Rules
+@media only screen and (max-width: 700px) {
+    body {
+        #main-navigation {
+          display: none;
+        }
+    }
+}

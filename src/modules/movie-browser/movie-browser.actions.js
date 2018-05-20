@@ -9,7 +9,6 @@ export const keys = {
 
 export const getTopMovies = (page) => createAsyncActionCreator(
   keys.GET_TOP_MOVIES,
-  // movieService.getTopMoviesRequest,
   movieService.getTopMovies,
   { page }
 );
