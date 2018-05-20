@@ -1,40 +1,66 @@
 import React from 'react';
+import _ from 'lodash'
+import axios from 'axios'
 import * as c3 from 'c3';
 import * as d3 from 'd3';
 
 import GraphCard from './graph-card/graph-card.component';
+import * as movieHelpers from '../movie-browser/movie-browser.helpers';
+
 
 class MovieStatistics extends React.Component {
   componentDidMount() {
-    const chart = c3.generate({
-        data: {
-            columns: [
-                ['data1', 30, 200, 100, 400, 150, 250],
-                ['data2', 130, 100, 140, 200, 150, 50],
-                ['data3', 130, -150, 200, 300, -200, 100]
-            ],
-            type: 'bar'
-        },
-        bar: {
-            width: {
-                ratio: 0.5 // this makes bar width 50% of length between ticks
-            }
-            // or
-            //width: 100 // this makes bar width 100px
+    const voteCount = ['Vote Count'];
+    const popularity = ['Popularity'];
+    const title = [];
+    const API_KEY = 'b2a1db157d5c38da50264ca60afa6273';
+    const urlPopularity = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
+    const fetchPopularity = axios.get(urlPopularity)
+      .then((response) => {
+        const results = response.data.results;
+        for ( var i = 1; i < results.length; i++ ) {
+          voteCount.push(results[i].vote_count);
+          popularity.push(Math.floor((results[i].popularity) * 10));
+          title.push(results[i].title);
         }
-    });
+      })
+      .then(() => {
+        const chart = c3.generate({
+            data: {
+              columns: [
+                  voteCount,
+                  popularity
+              ],
+                type: 'bar'
+            },
+            axis: {
+              x: {
+                type: 'category',
+                categories: title
+              }
+            },
+            bar: {
+                width: {
+                    ratio: 0.5
+                }
+            }
+        });
+      })
+      .catch((error) => console.log(error));
+
   }
+
   render() {
     return(
+
       <div
         id="statistics-section"
         className="container"
       >
         <GraphCard
-          title='Top Rated Budgets'
-          subtitle='Here you can see which of the top rated movies had bigger budgets'
+          title='Vote Count vs Popularity'
+          subtitle='Here you can see the Popularity VS Vote Count on the most Popular Movies'
         />
-
       </div>
     );
   }
