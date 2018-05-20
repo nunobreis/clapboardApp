@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row } from 'react-bootstrap';
 
 import * as movieActions from './movie-browser.actions';
 import * as movieHelpers from './movie-browser.helpers';

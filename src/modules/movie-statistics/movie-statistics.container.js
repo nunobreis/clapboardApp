@@ -1,11 +1,9 @@
 import React from 'react';
-import _ from 'lodash'
-import axios from 'axios'
+import axios from 'axios';
 import * as c3 from 'c3';
 import * as d3 from 'd3';
 
 import GraphCard from './graph-card/graph-card.component';
-import * as movieHelpers from '../movie-browser/movie-browser.helpers';
 
 
 class MovieStatistics extends React.Component {
@@ -15,7 +13,7 @@ class MovieStatistics extends React.Component {
     const title = [];
     const API_KEY = 'b2a1db157d5c38da50264ca60afa6273';
     const urlPopularity = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-    const fetchPopularity = axios.get(urlPopularity)
+    axios.get(urlPopularity)
       .then((response) => {
         const results = response.data.results;
         for ( var i = 1; i < results.length; i++ ) {
@@ -25,7 +23,7 @@ class MovieStatistics extends React.Component {
         }
       })
       .then(() => {
-        const chart = c3.generate({
+        c3.generate({
             data: {
               columns: [
                   voteCount,

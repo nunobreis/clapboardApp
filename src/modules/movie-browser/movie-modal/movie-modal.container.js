@@ -28,7 +28,7 @@ class MovieModalContainer extends React.Component {
 
   render() {
     const { isOpen, closeMovieModal, isLoading } = this.props;
-    const loadingStatus = isLoading ? 'loading' : 'hide';
+    // const loadingStatus = isLoading ? 'loading' : 'hide';
     const movie = movieHelpers.updateMoviePictureUrls(this.props.movie);
     const genres = (movie && movie.genres) ? movie.genres.map(genre => genre.name).join(', ') : '';
 

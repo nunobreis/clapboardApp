@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-  FormGroup,
-  FormControl,
-  Button,
-} from 'react-bootstrap';
 
 class MovieNavbar extends React.Component {
   render() {
@@ -18,6 +11,7 @@ class MovieNavbar extends React.Component {
           href="/"
         >
           <img
+            alt=""
             id="logo"
             src="img/clapperboard.png"
             width="20"
