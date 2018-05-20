@@ -43,9 +43,19 @@ class MovieBrowser extends React.Component {
     const { topMovies } = this.props;
     const movies = movieHelpers.getMoviesList(topMovies.response);
     return(
-      <div className="my-5">
+      <div className="container my-5">
+        <form id="search-section">
+            <input
+              type="search"
+              class="form-control"
+              id="search-movie"
+              aria-describedby="emailHelp"
+              placeholder="Search for a movie..."
+            />
+        </form>
         <Grid>
           <Row>
+
             <div className="my-5">
               <MovieList
                 movies={movies}

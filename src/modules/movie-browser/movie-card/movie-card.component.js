@@ -10,7 +10,6 @@ const styles = {
   },
   card: {
     cursor: 'pointer',
-    height: 394,
     overflow: 'hidden'
   },
   bgImage: {

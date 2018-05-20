@@ -25,6 +25,8 @@ body {
       border: 1px solid #0E6DA9;
       background-color: #0E6DA9;
       color: #fff; }
+  body #search-section {
+    margin-top: 100px; }
   body #statistics-section {
     margin-top: 100px; }
 
