@@ -43,29 +43,31 @@ class MovieBrowser extends React.Component {
     const { topMovies } = this.props;
     const movies = movieHelpers.getMoviesList(topMovies.response);
     return(
-      <div className="container my-5">
-        <form id="search-section">
-            <input
-              type="search"
-              class="form-control"
-              id="search-movie"
-              aria-describedby="emailHelp"
-              placeholder="Search for a movie..."
-            />
-        </form>
-        <Grid>
-          <Row>
 
-            <div className="my-5">
+      <div>
+        <div
+          id="cover-image"
+          className="jumbotron my-5"
+          >
+          <h1 className="display-4">Welcome to the Clapboard App</h1>
+          <p className="lead">
+            You can scroll through the top rated movies of all time, search for titles or see interesting statistics about movies :)
+          </p>
+        </div>
+        <div className="container">
+          <Grid>
+            <Row>
               <MovieList
-                movies={movies}
-                isLoading={topMovies.isLoading}
-              />
-            </div>
-          </Row>
-        </Grid>
-        <MovieModal />
+                  movies={movies}
+                  isLoading={topMovies.isLoading}
+                />
+            </Row>
+          </Grid>
+          <MovieModal />
+        </div>
+
       </div>
+
     );
   }
 }

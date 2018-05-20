@@ -1,5 +1,7 @@
 body {
   background: #f9f9f9 url("/img/doodles.png") repeat; }
+  body .c3-texts .c3-text text {
+    transform: translate(-22px, 0); }
   body .navbar {
     background-color: #22305F;
     opacity: .9; }
