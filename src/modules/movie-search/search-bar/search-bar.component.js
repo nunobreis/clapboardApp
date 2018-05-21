@@ -37,14 +37,6 @@ class SearchBar extends Component {
               aria-label="Movie's Title"
               aria-describedby="basic-addon2"
             />
-            <div className="input-group-append">
-              <button
-                type="submit"
-                className="btn button-statistics"
-              >
-                Search
-              </button>
-            </div>
           </div>
 
         </div>
