@@ -35,7 +35,7 @@ class MovieSearch extends React.Component {
     return (
       <div
         id="search-section"
-        className="container my-5"
+        className="container"
       >
         <SearchBar onSearchTermChange={term => this.movieSearch(term)} />
         <SearchList movies={this.state.movies} />
