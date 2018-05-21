@@ -13,7 +13,7 @@ const styles = {
 
 const SearchList = (props) => {
   const movieItem = props.movies.map((movie) => {
-    return <SearchListItem key={movie.title} movie={movie} />
+    return <SearchListItem movie={movie} />
   });
 
   return (
