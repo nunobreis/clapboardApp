@@ -21,28 +21,22 @@ class MovieNavbar extends React.Component {
             Clapperboard App
           </span>
         </a>
-        <form
+        <div
           id="main-navigation"
-          className="form-inline"
         >
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
+          <a
+            href="/movie-search"
             className="btn button-search my-2 my-sm-0"
-            type="submit">
-            Search
-          </button>
+          >
+            Search Movies
+          </a>
           <a
             className="btn button-statistics my-2 my-sm-0 mx-2"
             href="/statistics"
           >
             Statistics
           </a>
-        </form>
+        </div>
       </nav>
     );
   }

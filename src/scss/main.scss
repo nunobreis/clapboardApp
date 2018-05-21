@@ -3,6 +3,14 @@
 
 body {
     background: $background-color url("/img/doodles.png") repeat;
+    
+    .button-statistics {
+      @include statistics-button;
+    }
+
+    .button-statistics:hover {
+      @include statistics-button-hover;
+    }
 
     .navbar {
       background-color: $secondary-color;
@@ -19,14 +27,6 @@ body {
       .button-search:hover {
         @include search-button-hover;
       }
-
-      .button-statistics {
-        @include statistics-button;
-      }
-
-      .button-statistics:hover {
-        @include statistics-button-hover;
-      }
     }
 
     #search-section {
@@ -39,6 +39,10 @@ body {
 
     .movie-card {
       margin-top: 10px;
+    }
+
+    .movie-search-table {
+      background-color: $white;
     }
 }
 
