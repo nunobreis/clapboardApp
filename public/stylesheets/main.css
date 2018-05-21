@@ -1,7 +1,15 @@
 body {
   background: #f9f9f9 url("/img/doodles.png") repeat; }
-  body .c3-texts .c3-text text {
-    transform: translate(-22px, 0); }
+  body .button-statistics {
+    border-radius: .25rem;
+    border: 1px solid #37A8EE;
+    background-color: #37A8EE;
+    color: #fff; }
+  body .button-statistics:hover {
+    border-radius: .25rem;
+    border: 1px solid #0E6DA9;
+    background-color: #0E6DA9;
+    color: #fff; }
   body .navbar {
     background-color: #22305F;
     opacity: .9; }
@@ -17,22 +25,14 @@ body {
       border: 1px solid #37A8EE;
       background-color: #37A8EE;
       color: #fff; }
-    body .navbar .button-statistics {
-      border-radius: .25rem;
-      border: 1px solid #37A8EE;
-      background-color: #37A8EE;
-      color: #fff; }
-    body .navbar .button-statistics:hover {
-      border-radius: .25rem;
-      border: 1px solid #0E6DA9;
-      background-color: #0E6DA9;
-      color: #fff; }
   body #search-section {
     margin-top: 100px; }
   body #statistics-section {
     margin-top: 100px; }
   body .movie-card {
     margin-top: 10px; }
+  body .movie-search-table {
+    background-color: #fff; }
 
 @media only screen and (max-width: 700px) {
   body #main-navigation {
