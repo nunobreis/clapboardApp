@@ -7,26 +7,16 @@ class SearchBar extends Component {
     this.state = {
       term: ''
     };
-
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  onInputChange(event) {
-    this.setState({ term: event.target.value });
-  }
-
-  onFormSubmit(event) {
-    event.preventDefault();
-
-    this.props.fetchMovies(this.state.term);
-    this.setState({ term: '' });
+  onInputChange(term) {
+    this.setState({ term });
+    this.props.onSearchTermChange(term);
   }
 
   render() {
     return(
-      <form
-        onSubmit={this.onFormSubmit}
+      <div
         className="my-5"
       >
         <div className="form-group">
@@ -40,7 +30,7 @@ class SearchBar extends Component {
             </div>
             <input
               value={this.state.term}
-              onChange={this.onInputChange}
+              onChange={event => this.onInputChange(event.target.value)}
               type="text"
               className="form-control"
               placeholder="Search for a movie..."
@@ -58,7 +48,7 @@ class SearchBar extends Component {
           </div>
 
         </div>
-      </form>
+      </div>
     );
   }
 }
